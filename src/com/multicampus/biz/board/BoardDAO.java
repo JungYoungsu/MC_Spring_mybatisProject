@@ -14,22 +14,23 @@ public class BoardDAO {
 	}
 	
 	public void insertBoard(BoardVO vo) {
-		mybatis.insert("insertBoard", vo);
+		mybatis.insert("BoardDAO.insertBoard", vo);
 	}
 
 	public void updateBoard(BoardVO vo) {
-		mybatis.update("updateBoard", vo);
+		mybatis.update("BoardDAO.updateBoard", vo);
 	}
 
 	public void deleteBoard(BoardVO vo) {
-		mybatis.delete("deleteBoard", vo);
+		mybatis.delete("BoardDAO.deleteBoard", vo);
 	}
 
 	public BoardVO getBoard(BoardVO vo) {
-		return (BoardVO) mybatis.selectOne("getBoard", vo);
+		return (BoardVO) mybatis.selectOne("BoardDAO.getBoard", vo);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<BoardVO> getBoardList(BoardVO vo) {
-		return mybatis.selectList("getBoardList", vo);
+		return mybatis.selectList("BoardDAO.getBoardList", vo);
 	}
 }
